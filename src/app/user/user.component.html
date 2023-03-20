@@ -1,0 +1,41 @@
+<div class="container p-5 h-100">
+    <div class="row ">
+        <div class="col-lg-7 col-md-8 col-sm-12 border border-3 m-auto mt-5 rounded-4">
+            <form action="" class="form p-3" [formGroup]="loginForm" (ngSubmit)="submit(loginForm.value)">
+            <h1 class="text-center m-2 mb-4">LOGIN</h1>
+            <div class="row mb-3" >
+                <label for="" class="col-sm-2 col-form-label-lg ">Email</label>
+                <div class="col-sm-10 email"  >
+                    <input type="email" name="email" class="form-control form-control-lg w-100" id="" formControlName="emailid" >
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="" class="col-sm-2 col-form-label-lg">Password</label>
+                <div class="col-sm-10" >
+                    <input [type]="changetype?'password':'text'" name="password" class="form-control form-control-lg w-100" id="" formControlName="pass">
+                </div>
+            </div>
+            <div class="row m-3 text-center text-danger">
+                <p>{{message}}</p>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="checkbox" [checked]="isChecked" (change)="toggle($event)" class="form-check-input p-2 " id="flexCheckDefault"> 
+                    <label for="flexCheckDefault" class="form-check-label shwlab">Show Password</label>
+                </div>
+                
+                <div class="col text-end">
+                    <a href="" class="link">Forgot Password ?</a>
+                </div>
+            </div>
+            <div class="col mb-3 ">
+                <button type="submit" class="btn btn-lg bg-primary w-100" >LOGIN</button>
+            </div>
+
+            <div class="col text-center">
+                <a routerLink="signup" class="link">Don't Have a Account ? Create One</a>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
