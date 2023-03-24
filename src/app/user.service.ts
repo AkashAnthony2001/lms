@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Register, Users } from './model/users';
+import { Register, Users , Username} from './model/users';
 
 
 @Injectable({
@@ -22,7 +22,10 @@ register:any[]=[]
 
   checkUser(user:Users):Observable<any>{
     return this.http.post("http://localhost:3000/user/isExist",user);
+  }
 
+  getname(name:Username):Observable<any>{
+    return this.http.post("http://localhost:3000/user/isExist",name);
   }
 
 }

@@ -20,22 +20,23 @@ export class SignupComponent implements OnInit{
   signupForm !: FormGroup;
   ngOnInit(){
     this.signupForm = new FormGroup({
-      firstname : new FormControl('',[Validators.required]),
-      lastname : new FormControl('',[Validators.required]),
-      email : new FormControl('',[Validators.required]),
-      password : new FormControl('',[Validators.required]),
-      confirmpassword : new FormControl('',[Validators.required]),
-      phone : new FormControl('',[Validators.required]),
-      terms : new FormControl('',[Validators.required])
-    })
+      'firstname' : new FormControl('',[Validators.required]),
+      'lastname' : new FormControl('',[Validators.required]),
+      'email' : new FormControl('',[Validators.required]),
+      'password' : new FormControl('',[Validators.required,Validators.minLength(10)]),
+      'confirmpassword' : new FormControl('',[Validators.required,Validators.minLength(10)]),
+      'phone' : new FormControl('',[Validators.required]),
+      'terms' : new FormControl('',[Validators.required])
+    });
   }
-  submit(data:any){
-    this.user.registerUsers(data).subscribe((res)=>{
+  submit(datas:any){
+    this.user.registerUsers(datas).subscribe((res)=>{
       if(res.data == true){
         this.route.navigateByUrl("login")
       }
-      
+     // var first = JSON.parse(datas.firstname)
+      sessionStorage.setItem("first" , datas.firstname)
     })
-    
+   
   }
 }

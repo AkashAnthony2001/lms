@@ -34,13 +34,9 @@ toggle(evt:any){
 }
 
 submit(data:any){
-this.emailid = data.emailid;
-this.pass = data.pass;
 
-
-  this.usermodel.email=this.emailid;
-  this.usermodel.password=this.pass;
-// of([1,2,3]).subscribe((v) => console.info(v));
+this.usermodel.email=data.emailid;
+this.usermodel.password=data.pass;
 this.user.checkUser(this.usermodel).subscribe((result)=>{
   if(result.data == true){
     console.log(result.data);
