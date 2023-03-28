@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { Users } from '../model/users';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 
 @Component({
@@ -44,7 +44,7 @@ this.user.checkUser(this.usermodel).subscribe((result)=>{
   }
   else{
     let warning = result.message
-    this.message=warning
+    this.message = warning
     
   }
 })

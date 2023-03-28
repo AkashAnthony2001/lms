@@ -14,3 +14,10 @@ export class Register{
     phone:number;
     terms:boolean;
 }
+export class Books{
+    bookname : string;
+    pages : number;
+    author : string;
+    image: string;
+}
+

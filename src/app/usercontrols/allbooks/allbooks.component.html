@@ -1,0 +1,13 @@
+<app-usernav></app-usernav>
+<div class="container-fluid px-3">
+    <div class="row shadow justify-content-center p-3">
+        <div class="card p-2 m-1 shadow " *ngFor="let i of listbooks" style="width:15rem;">
+          <div class="card-img text-center"><img class="card-img-top " [src]="i.image" style="width:80%;" alt="Card image cap"></div>
+          <div class="card-body">
+            <h5 class="card-title">{{i.bookname}}</h5>
+            <p class="card-text">{{i.pages}}</p>
+            <p class="card-text">{{i.author}}</p>
+          </div>
+        </div>
+     </div>
+</div>  

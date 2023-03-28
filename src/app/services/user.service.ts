@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Register, Users , Username} from './model/users';
+import { Register, Users , Username, Books} from '../model/users';
 
 
 @Injectable({
@@ -28,4 +28,11 @@ register:any[]=[]
     return this.http.post("http://localhost:3000/user/isExist",name);
   }
 
+  savebooks(books:Books):Observable<any>{
+    return this.http.post("http://localhost:3000/books/store",books);
+  }
+
+  showall():Observable<any>{
+    return this.http.get("http://localhost:3000/books/");
+  }
 }
