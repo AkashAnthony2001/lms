@@ -11,7 +11,6 @@ export class AllbooksComponent {
   constructor(private books:UserService){
     this.books.showall().subscribe((data:any)=>{
       this.listbooks = data.response;
-      console.log(this.listbooks);
       
     })
     }
