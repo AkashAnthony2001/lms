@@ -17,6 +17,7 @@
             </div>
             <div class="col-sm-10 w-50 mx-auto py-2"  >
                 <input type="file" class="btn bg-secondary text-light" (change)="upload($event)" formControlName="image">
+                <button type="submit" class="btn bg-primary text-light" (click)="uploadimage()">Upload</button>
             </div>
             <div><p class="text-success fw-500 text-center">{{message}}</p></div>
             <div class="col-sm-10 w-25 mx-auto py-2"  >

@@ -8,8 +8,8 @@ import { Register, Users , Username, Books} from '../model/users';
   providedIn: 'root'
 })
 export class UserService {
-user:any=""
-register:any[]=[]
+selectedBooks:Books;
+book:Books[];
   constructor(private http:HttpClient) { }
 
   getUsers():Observable<any>{
@@ -34,5 +34,14 @@ register:any[]=[]
 
   showall():Observable<any>{
     return this.http.get("http://localhost:3000/books/");
+  }
+
+  sendimage(image:any):Observable<any>{
+    const formData = new FormData();
+    formData.append('file', image , image.name)
+    return this.http.post("http://localhost:4200/assets/books",formData)
+  }
+  removedata(id:string){
+    return this.http.delete("http://localhost:3000/books/delete/"+id)
   }
 }

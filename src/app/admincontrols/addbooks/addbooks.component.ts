@@ -28,21 +28,12 @@ image : File
     this.image = <File>event.target.files[0]; 
   
   }
-  Add(data:any){
-    const fd = new FormData();
-    fd.append('image', this.image , this.image.name)
-    fetch('http://localhost:4200/assets/books',{
-      method: 'POST',
-      body: fd
-    })
-    .then(response => {
-      console.log(response);
-    })
-    .catch(error => {
-      console.error(error);
+  uploadimage(){
+    this.books.sendimage(this.image).subscribe((mess:any)=>{
       
     })
-
+  }
+  Add(data:any){
     this.booksmodel.bookname = data.bookname;
     this.booksmodel.pages = data.pages;
     this.booksmodel.author = data.author;
